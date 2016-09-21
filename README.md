@@ -14,15 +14,15 @@
 **Nathaniel Shih**
 * frontend, Materialize design
 ***
-**Inspiration:**
+##Inspiration:
 
   We can never choose what to eat for lunch! Decision fatigue. There should be an easier way.
 
-**What it does:**
+##What it does:
 
   Removes indecision by choosing a restaurant for your next meal. Choose your perameters(sp?) by price, location, cuisine and we'll decide for you!
 
-**How we built it:**
+##How we built it:
 
 Front end
 
@@ -37,19 +37,19 @@ Instagram (possibly)
 Postmates(possibly)
 
 
-**Challenges we ran into:**
+##Challenges we ran into:
 
 
-**Accomplishments that we’re proud of:**
+##Accomplishments that we’re proud of:
 
 
-**What we learned:**
+##What we learned:
 
 
-**What’s next for SnapSnax:**
+##What’s next for SnapSnax:
 
 
-**Built With:**
+##Built With:
 
 JavaScript
 
@@ -60,6 +60,6 @@ Bootstrap
 APIs (above)
 
 
-**Try it out:**
+##Try it out:
 
 https://github.com/SnapSnax/webapp
