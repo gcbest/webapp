@@ -1,5 +1,5 @@
 # SnapSnax
-## Solving your food indecisions on meal at a time.
+## Solving your food indecisions one meal at a time.
 ***
 ##Team:	
 **Allen Raymond**
