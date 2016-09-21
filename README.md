@@ -1,6 +1,7 @@
 # SnapSnax
 ## Solving your food indecisions one meal at a time.
-***
+
+
 ##Team:	
 **Allen Raymond**
 * backend, Opentable API integration
@@ -13,7 +14,9 @@
 
 **Nathaniel Shih**
 * frontend, Materialize design
+
 ***
+
 ##Inspiration:
 We can never choose what to eat for lunch! Decision fatigue. There should be an easier way.
 
