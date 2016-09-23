@@ -11,13 +11,16 @@
 	<link rel="stylesheet" href="assets/css/style.css">
   	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- Icons for Materialize -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
 
 
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper red darken-3">
     <a href="index.html" class="brand-logo">SNAPSNAX</a>
   <!--   <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="">sass</a></li>
@@ -32,10 +35,23 @@
 		<div class="row">
 			<!-- Column #1 Row#1 -->
 			<div class="col s12">
-				
+				<div class="row">
+					  	<div class="input-field col s6">
+          					<i class="material-icons prefix">account_circle</i>
+          					<input id="userName" type="text" class="validate">
+          					<label for="userName">Username</label>
+        				</div>
+
+        				<div class="input-field col s6">
+          					<i class="material-icons prefix">my_location</i>
+          					<input id="userLocation" type="tel" class="validate">
+          					<label for="userLocation">Location</label>
+        				</div>
+				</div>
+				<a class="waves-effect waves-light btn modal-trigger red darken-3" href="#modal1">What are you having?</a>
 			</div> <!-- Closes Column#1 Row#1 -->
 		  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+  
 
 		</div> <!-- Closes Row#1-->
 		
@@ -45,11 +61,38 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
-      <h4>Pick your Cuisine options!</h4>
-      <img src="http://lorempixel.com/output/food-q-c-440-440-9.jpg" alt="test image">
-      <p>Testing this Modal </p>
-      <p>This is more text</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quibusdam quidem enim fuga, omnis iure cum illum sed, aperiam suscipit unde tenetur explicabo minima adipisci dolorem quia quas aliquid voluptates.</p>
+      <h4>Pick your meal options!</h4>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+      <!-- 
+      <img src="http://lorempixel.com/output/food-q-c-150-150-9.jpg" alt="test image">
+      <img src="http://lorempixel.com/output/food-q-c-150-150-10.jpg" alt="test image">
+      <img src="http://lorempixel.com/output/food-q-c-150-150-1.jpg" alt="test image">
+      <img src="http://lorempixel.com/output/food-q-c-150-150-2.jpg" alt="test image">
+      <img src="http://lorempixel.com/output/food-q-c-150-150-3.jpg" alt="test image">
+      <img src="http://lorempixel.com/output/food-q-c-150-150-4.jpg" alt="test image"> -->
+   <div class="input-field col s12 m6">
+    <select multiple icons">
+      <option value="" disabled selected>Choose your options!</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-1.jpg" class="left circle">Breakfast</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-2.jpg" class="left circle">Lunch</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-3.jpg" class="left circle">Dinner</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-4.jpg" class="left circle">Take-out</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-5.jpg" class="left circle">Delivery</option>
+
+
+    </select>
+    <label>What would you like?</label>
+  </div>
+     
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -64,7 +107,21 @@
 
 	</div> <!-- Closes container div -->
 	
+	
+
+
+
 </body>
+
+<footer class="page-footer red darken-3">
+
+   	<div class="footer-copyright red darken-3">
+            <div class="container">
+            © 2016 Copyright SnapSnax
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+    </div>
+</footer>
 
 	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>

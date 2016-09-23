@@ -10,6 +10,8 @@
 
   // Document Ready with the modal trigger
   $(document).ready(function(){
+  	// material select trigger
+  	$('select').material_select();
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -18,9 +20,7 @@
       out_duration: 200, // Transition out duration
       starting_top: '4%', // Starting top style attribute
       ending_top: '10%', // Ending top style attribute
-      ready: function() { alert('Ready'); }, // Callback for Modal open
-      complete: function() { alert('Closed'); } // Callback for Modal close
-    }
+     }
   );
       
 
