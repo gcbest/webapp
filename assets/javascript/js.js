@@ -1,3 +1,4 @@
+// =========Start Firebase =========
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCbTv3BkBJNDeICV4f0grvKiTPjyfcVEfE",
@@ -7,7 +8,9 @@
     messagingSenderId: "961593911482"
   };
   firebase.initializeApp(config);
+// =========End Firebase=========
 
+// =========Start Materialize=========
   // Document Ready with the Materialize triggers
   $(document).ready(function(){
   	//Parallax Trigger
@@ -24,11 +27,9 @@
       ending_top: '10%', // Ending top style attribute
      }
   );
-      
-
-
   });
-          
+  // =========End Materialize=========
+
   // =========Start Yelp API=========
 function restaurantFinder() {
 
@@ -130,10 +131,7 @@ function restaurantFinder() {
 };
 // =========End Yelp API=========
 
-<<<<<<< HEAD
 // =========Start Google Maps API ======
-//function locationFinder (){
-  //set variables
 	//var auth = "https://maps.googleapis.com/maps/api/geocode/json?address=" +1600+Amphitheatre+Parkway,+Mountain+View,+CA+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
 
   var geocoder;
@@ -149,28 +147,24 @@ function restaurantFinder() {
   }
 
   function codeAddress() {
-    var address = document.getElementById('address').value;
+    var address = document.getElementById('userLocation').value;
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == 'OK') {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
+        console.log(address);
+        // map.setCenter(results[0].geometry.location);
+        // use the marker to set 
+        // var marker = new google.maps.Marker({
+        //     map: map,
+        //     position: results[0].geometry.location
+        // });
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
   }
 
+// =========End Google Maps API ======
 
-//}; // close locationFinder function
-=======
-// // =========Start Google Maps API ======
-// function locationFinder( {
-// 	var = auth {"https://maps.googleapis.com/maps/api/geocode/json?address=" +1600+Amphitheatre+Parkway,+Mountain+View,+CA+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA"};
-// }); // close locationFinder function
->>>>>>> b29875abb1930b3458af83e6e64b79bf16554768
 
 
 
