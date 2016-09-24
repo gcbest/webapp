@@ -3,21 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SnapSnax</title>
-
+	<!-- Reset CSS -->
+	<link rel="stylesheet" href="assets/css/reset.css">
  	<!-- Materialize -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-	<!-- Reset and Style.css -->
-	<link rel="stylesheet" href="assets/css/reset.css">
+	<!-- Style.css -->
 	<link rel="stylesheet" href="assets/css/style.css">
-  	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  	<!-- Icons for Materialize -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
 
 
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper red darken-3">
     <a href="index.html" class="brand-logo">SNAPSNAX</a>
   <!--   <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="">sass</a></li>
@@ -26,16 +27,58 @@
     </ul> -->
   </div>
 </nav>
+
+    <div class="parallax-container">
+
+	<div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center red-text text-darken-3">SnapSnax</h1>
+        <div class="row center">
+          <h4 class="header col s12 red-text text-darken-3 light">Solving your food indecisions one meal at a time.</h4>
+        </div>
+        <div class="row center">
+          <a class="waves-effect waves-light btn modal-trigger red darken-3" href="#modal1">What are you having?</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+
+      <div class="parallax"><img src="assets/images/paperbag.jpg"></div>
+    </div>
 	<!-- Main container div -->
 	<div class="container">
 		<!-- ROW #1 -->
 		<div class="row">
 			<!-- Column #1 Row#1 -->
 			<div class="col s12">
+				<!-- <div class="row"> -->
+					<div class="card medium white darken-4">
+            		<div class="card-content white-text">
+              		<span class="card-title"></span>
+						<!-- Username input -->
+					  	<!-- <div class="input-field col s6 red-text text-darken-3">
+          					<i class="material-icons prefix">account_circle</i>
+          					<input id="userName" type="text" class="">
+          					<label for="userName">Username</label>
+        				</div> -->
+						<!-- Location input -->
+        				<div class="input-field col s6 red-text text-darken-3">
+          					<i class="material-icons prefix">my_location</i>
+          					<input id="userLocation" type="text" class="">
+          					<label for="userLocation">Location</label>
+        				</div>
+							<button class="btn waves-effect waves-light red darken-3" type="submit" name="action">Find your restaurant
+							<i class="material-icons right">send</i>
+							</button>
+        			</div>
+        			</div>
+				<!-- </div> -->
 				
 			</div> <!-- Closes Column#1 Row#1 -->
 		  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+  
 
 		</div> <!-- Closes Row#1-->
 		
@@ -45,10 +88,23 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>Testing this Modal </p>
-      <p>This is more text</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quibusdam quidem enim fuga, omnis iure cum illum sed, aperiam suscipit unde tenetur explicabo minima adipisci dolorem quia quas aliquid voluptates.</p>
+      <h4>Pick your meal options!</h4>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+   <div class="input-field col s12 m6">
+    <select multiple icons">
+      <option value="" disabled selected>Choose your options!</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-1.jpg" class="left circle">Breakfast</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-2.jpg" class="left circle">Lunch</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-3.jpg" class="left circle">Dinner</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-4.jpg" class="left circle">Take-out</option>
+      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-5.jpg" class="left circle">Delivery</option>
+
+
+    </select>
+    <label>What would you like?</label>
+  </div>
+     
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -63,8 +119,25 @@
 
 	</div> <!-- Closes container div -->
 	
+	
+ <div class="parallax-container">
+    <div class="parallax"><img src="assets/images/burger.jpg"></div>
+  </div>
+
+
 </body>
 
+<footer class="page-footer red darken-3">
+
+   	<div class="footer-copyright red darken-3">
+            <div class="container">
+            © 2016 Copyright SnapSnax
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+    </div>
+</footer>
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<!-- Firebase -->
