@@ -132,41 +132,66 @@ function restaurantFinder() {
 // =========End Yelp API=========
 
 // =========Start Google Maps API ======
-	//var auth = "https://maps.googleapis.com/maps/api/geocode/json?address=" +1600+Amphitheatre+Parkway,+Mountain+View,+CA+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
 
-  var geocoder;
-  var map;
-  function initialize() {
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
-    var mapOptions = {
-      zoom: 8,
-      center: latlng
-    }
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  }
+  // var geocoder;
+  // var map;
+  // var markers = new Array();
+  // var infos = new Array();
 
-  function codeAddress() {
-    var address = document.getElementById('userLocation').value;
-    geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == 'OK') {
-        console.log(address);
-        // map.setCenter(results[0].geometry.location);
-        // use the marker to set 
-        // var marker = new google.maps.Marker({
-        //     map: map,
-        //     position: results[0].geometry.location
-        // });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
+  // function initialize() {
+  //   geocoder = new google.maps.Geocoder();
+  //   var latlng = new google.maps.LatLng(-34.397, 150.644);
+  //   var mapOptions = {
+  //     zoom: 8,
+  //     center: latlngmap
+  //     TypeId: google.maps.MapTypeId.ROADMAP
+  //   }
+  //   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  // }
+
+  // function codeAddress() {
+  //   var address = document.getElementById('userLocation').value;
+  //   geocoder.geocode( { 'address': address}, function(results, status) {
+  //     if (status == 'OK') {
+  //       console.log(address);
+  //       // map.setCenter(results[0].geometry.location);
+  //       // use the marker to set 
+  //       // var marker = new google.maps.Marker({
+  //       //     map: map,
+  //       //     position: results[0].geometry.location
+  //       // });
+  //     } else {
+  //       alert('Geocode was not successful for the following reason: ' + status);
+  //     }
+  //   });
+  // }
 
 // =========End Google Maps API ======
 
+// =========Start Google Geocoder API ======
+  // var inputAddress = $("#userLocation").val().trim();
+  // var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+inputAddress+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
+  // console.log(inputAddress);
+  // console.log(googleUrl);
+// =========End Google Geocoder API ======
 
-
+$("#submit").on('click', function(){
+  //alert("It works");
+  var inputAddress = $("#userLocation").val().trim();
+  var quoAdd = "\" "+ inputAddress +"\""
+  console.log(quoAdd);
+  var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
+  console.log(inputAddress);
+  console.log(googleUrl);
+/// REVIEW OBJ   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+//         if (status == google.maps.GeocoderStatus.OK) { 
+//             console.log("Google OK");
+//             };
+//         else {
+//             alert('Geocode was not successful for the following reason: ' + status);
+//         }
+// });
+});
 
 
 
