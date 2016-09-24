@@ -9,9 +9,7 @@
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 	<!-- Style.css -->
 	<link rel="stylesheet" href="assets/css/style.css">
-  	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<!-- Icons for Materialize -->
+  	<!-- Icons for Materialize -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -29,25 +27,38 @@
     </ul> -->
   </div>
 </nav>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="assets/images/burger.jpg"></div>
+    </div>
 	<!-- Main container div -->
 	<div class="container">
 		<!-- ROW #1 -->
 		<div class="row">
 			<!-- Column #1 Row#1 -->
 			<div class="col s12">
-				<div class="row">
-					  	<div class="input-field col s6">
+				<!-- <div class="row"> -->
+					<div class="card medium white darken-4">
+            		<div class="card-content white-text">
+              		<span class="card-title"></span>
+
+					  	<div class="input-field col s6 red-text text-darken-3">
           					<i class="material-icons prefix">account_circle</i>
-          					<input id="userName" type="text" class="validate">
+          					<input id="userName" type="text" class="">
           					<label for="userName">Username</label>
         				</div>
 
-        				<div class="input-field col s6">
+        				<div class="input-field col s6 red-text text-darken-3">
           					<i class="material-icons prefix">my_location</i>
-          					<input id="userLocation" type="tel" class="validate">
+          					<input id="userLocation" type="text" class="">
           					<label for="userLocation">Location</label>
         				</div>
-				</div>
+							<button class="btn waves-effect waves-light red darken-3" type="submit" name="action">Submit
+							<i class="material-icons right">send</i>
+							</button>
+        			</div>
+        			</div>
+				<!-- </div> -->
 				<a class="waves-effect waves-light btn modal-trigger red darken-3" href="#modal1">What are you having?</a>
 			</div> <!-- Closes Column#1 Row#1 -->
 		  <!-- Modal Trigger -->
@@ -108,7 +119,9 @@
 	</div> <!-- Closes container div -->
 	
 	
-
+ <div class="parallax-container">
+    <div class="parallax"><img src="assets/images/porkbelly.jpg"></div>
+  </div>
 
 
 </body>
@@ -122,7 +135,8 @@
             </div>
     </div>
 </footer>
-
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<!-- Firebase -->

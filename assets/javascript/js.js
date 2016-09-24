@@ -8,8 +8,10 @@
   };
   firebase.initializeApp(config);
 
-  // Document Ready with the modal trigger
+  // Document Ready with the Materialize triggers
   $(document).ready(function(){
+  	//Parallax Trigger
+    $('.parallax').parallax();
   	// material select trigger
   	$('select').material_select();
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
