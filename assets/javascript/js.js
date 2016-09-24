@@ -8,10 +8,25 @@
   };
   firebase.initializeApp(config);
 
-  // Document Ready with the modal trigger
+  // Document Ready with the Materialize triggers
   $(document).ready(function(){
+  	//Parallax Trigger
+    $('.parallax').parallax();
+  	// material select trigger
+  	$('select').material_select();
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
+    $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      starting_top: '4%', // Starting top style attribute
+      ending_top: '10%', // Ending top style attribute
+     }
+  );
+      
+
+
   });
           
   // =========Start Yelp API=========
@@ -115,6 +130,7 @@ function restaurantFinder() {
 };
 // =========End Yelp API=========
 
+<<<<<<< HEAD
 // =========Start Google Maps API ======
 //function locationFinder (){
   //set variables
@@ -149,6 +165,12 @@ function restaurantFinder() {
 
 
 //}; // close locationFinder function
+=======
+// // =========Start Google Maps API ======
+// function locationFinder( {
+// 	var = auth {"https://maps.googleapis.com/maps/api/geocode/json?address=" +1600+Amphitheatre+Parkway,+Mountain+View,+CA+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA"};
+// }); // close locationFinder function
+>>>>>>> b29875abb1930b3458af83e6e64b79bf16554768
 
 
 
