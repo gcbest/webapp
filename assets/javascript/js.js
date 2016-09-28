@@ -166,23 +166,23 @@ function restaurantFinder() {
   //   });
   // }
 // ========= autolocate ======
-var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+// var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   
-  var options = {
-    zoom: 15,
-    center: coords,
-    mapTypeControl: false,
-    navigationControlOptions: {
-      style: google.maps.NavigationControlStyle.SMALL
-    },
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
-  var marker = new google.maps.Marker({
-      position: coords,
-      map: map,
-      title:"You are here!"
-  });
+//   var options = {
+//     zoom: 15,
+//     center: coords,
+//     mapTypeControl: false,
+//     navigationControlOptions: {
+//       style: google.maps.NavigationControlStyle.SMALL
+//     },
+//     mapTypeId: google.maps.MapTypeId.ROADMAP
+//   };
+//   var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+//   var marker = new google.maps.Marker({
+//       position: coords,
+//       map: map,
+//       title:"You are here!"
+//   });
 
 // =========End Google Maps API ======
 
@@ -195,10 +195,10 @@ var coords = new google.maps.LatLng(position.coords.latitude, position.coords.lo
 
 $("#submit").on('click', function(){
   //alert("It works");
-  var inputAddress = $("#userLocation").val().trim();
+  var inputAddress = $(near).val().trim();
   var quoAdd = "\" "+ inputAddress +"\""
   console.log(quoAdd);
-  var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
+  var googleUrl = $("#maphere").append("<iframe src=\"//www.google.com/maps/embed/v1/place?q="+encodeURIComponent(quoAdd)+"&zoom=17&key=AIzaSyB4mN_A2vOANGFxYfVw99rUuOPftTeFUVM\"</iframe>")
   console.log(inputAddress);
   console.log(googleUrl);
 /// REVIEW OBJ   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
@@ -212,6 +212,7 @@ $("#submit").on('click', function(){
 });
 
 
+  
 
 
 

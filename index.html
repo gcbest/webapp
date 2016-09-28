@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>SnapSnax</title>
   <!-- Google Maps -->
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<!--   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- OAuth  -->
@@ -60,7 +60,7 @@
 	<!-- Main container div -->
 	<div class="container">
 		<!-- ROW #1 -->
-		<div class="row">
+		<div class="row" id="maphere">
 			<!-- Column #1 Row#1 -->
 			<div class="col s12">
 				<!-- <div class="row"> -->
@@ -90,14 +90,14 @@
 
 
 <!-- GOOD PLACE FOR THE MAP???? -->
-<section id="wrapper">
+<!-- <section id="wrapper">
 Click the allow button to let the browser find your location.
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <article>
 
-    </article>
-<script>
+    </article> -->
+<!-- <script>
 function success(position) {
   var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcontainer';
@@ -133,7 +133,7 @@ if (navigator.geolocation) {
 }
 
 </script>
-</section>
+</section> -->
 
 <!-- END MAP?????? -->
 
@@ -160,7 +160,7 @@ if (navigator.geolocation) {
    <div class="input-field col s5">
     <select multiple icons">
       <option value="" disabled selected>Choose your options!</option>
-      <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-1.jpg" class="left circle">Breakfast</option>
+      <option value="breakfast" data-icon="http://lorempixel.com/output/food-q-c-150-150-1.jpg" id="breakfast" class="left circle">Breakfast</option>
       <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-2.jpg" class="left circle">Lunch</option>
       <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-3.jpg" class="left circle">Dinner</option>
       <option value="" data-icon="http://lorempixel.com/output/food-q-c-150-150-4.jpg" class="left circle">Take-out</option>
@@ -225,6 +225,6 @@ if (navigator.geolocation) {
 	<!-- Firebase -->
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 	<!-- JavaScript -->
-	<script src="assets/javascript/js.js"></script>
+	<script src="assets/javascript/test.js"></script>
 
 </html>

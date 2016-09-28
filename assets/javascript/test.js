@@ -1,7 +1,8 @@
 $("#submit").on("click", function() {
-var yelpTerms = $("#cuisine").val().trim();
+var yelpTerms = $("#breakfast").attr("value");
+console.log(yelpTerms);
 var yelpAddress = $("#userLocation").val().trim();
-var zipcode = ""; // This is going to be a variable coming from the Seat Geek Api
+var zipcode = ""; 
 var auth = {
     consumerKey: 'A57Bv67Jx1i_WTKhVxaiTg', 
     consumerSecret: 'z4fnfyiWxl25JrABzDChCd8NGGI',
@@ -72,3 +73,16 @@ var auth = {
             console.log(response.businesses);
             });
         })
+
+
+/////////////GOOGLE/////////////////
+$("#submit").on('click', function(){
+  //alert("It works");
+  var inputAddress = $(near).val().trim();
+  var quoAdd = "\" "+ inputAddress +"\""
+  console.log(quoAdd);
+  var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
+  console.log(inputAddress);
+  console.log(googleUrl);
+});
+///////////////END GOOGLE///////////
