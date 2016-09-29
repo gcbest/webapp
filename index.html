@@ -68,6 +68,7 @@
           <div class="card medium white darken-4">
                 <div class="card-content white-text">
                   <span class="card-title"></span>
+
 <!-- ====================================================================== -->
             <!-- Username input for firebase storage -->
               <!-- <div class="input-field col s6 red-text text-darken-3">
@@ -88,19 +89,28 @@
               <button class="btn waves-effect waves-light red darken-3" id="FindRest" type="submit" name="action">Find your restaurant
               <i class="material-icons right">send</i>
               </button>
+
               </div>
               </div>
         <!-- </div> -->
         
       </div> <!-- Closes Column#1 Row#1 -->
       <!-- Modal Trigger -->
-  
+
 
     </div> <!-- Closes Row#1-->
     
     <!-- ROW #2 -->
     <div class="row">
-  
+
+
+<!-- Show Google Map ==================================== -->
+<div id="results"></div>
+<div class="map">map here</div>
+ 
+<!-- End Google Map ==================================== -->
+
+
   <!-- Modal Structure -->
   <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
@@ -141,12 +151,7 @@
           
     </div>
 
-<!-- Show Google Map ==================================== -->
 
- <div class="map"></div>
- 
-
-<!-- End Google Map ==================================== -->
 
   </div> <!-- Closes container div
   
@@ -178,6 +183,8 @@
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
   <!-- JavaScript -->
-  <script src="assets/javascript/js.js"></script>
+  <script type="text/javascript" src="assets/javascript/oauth.js"></script>
+  <script type="text/javascript" src="assets/javascript/sha1.js"></script>
+  <script type="text/javascript" src="assets/javascript/js.js"></script>
 
 </html>

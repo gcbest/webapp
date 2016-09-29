@@ -74,7 +74,7 @@ $("#price").change(function() {
 
 
 
-$("#submit").on("click", function() {
+$("#FindRest").on("click", function() {
     // var yelpTerms = $("#cuisine").val().trim();
     var auth = {
         consumerKey: 'A57Bv67Jx1i_WTKhVxaiTg',
@@ -88,6 +88,7 @@ $("#submit").on("click", function() {
 
     var terms = foodStr;
     var near = $("#userLocation").val().trim();
+    console.log(near);
     var limit = 12;
     var image_url = 'image_url';
     var rating_img_url_large = 'rating_img_url_large';
@@ -186,8 +187,8 @@ $("#submit").on("click", function() {
         console.log(response.businesses[randomInt]);
         console.log(address);
         console.log(price);
-    });
-});
+    }); //end done
+};
 
 
 
