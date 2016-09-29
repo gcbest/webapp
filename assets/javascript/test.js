@@ -1,3 +1,24 @@
+// =========Start Materialize=========
+  // Document Ready with the Materialize triggers
+  $(document).ready(function(){
+    //Parallax Trigger
+    $('.parallax').parallax();
+    // material select trigger
+    $('select').material_select();
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      starting_top: '4%', // Starting top style attribute
+      ending_top: '10%', // Ending top style attribute
+     }
+  );
+  });
+  // =========End Materialize=========
+
+  // =========Start Yelp=========
 $("#submit").on("click", function() {
 var yelpTerms = $("#breakfast").attr("value");
 console.log(yelpTerms);
@@ -73,12 +94,12 @@ var auth = {
             console.log(response.businesses);
             });
         })
-
+  // =========End Yelp=========
 
 /////////////GOOGLE/////////////////
 $("#submit").on('click', function(){
   //alert("It works");
-  var inputAddress = $(near).val().trim();
+  var inputAddress = $("#userLocation").val().trim();
   var quoAdd = "\" "+ inputAddress +"\""
   console.log(quoAdd);
   var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
