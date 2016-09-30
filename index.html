@@ -89,7 +89,16 @@
               <button class="btn waves-effect waves-light red darken-3" id="FindRest" type="submit" name="action">Find your restaurant
               <i class="material-icons right">send</i>
               </button>
-
+              <div class="row">
+                <div class="col s8 offset-s2">
+                  <div id="results">
+                  <!-- Show Google Map ==================================== -->
+<div id="map">map here</div>
+ 
+<!-- End Google Map ==================================== -->
+                  </div>
+                </div> <!-- Results Div Column -->
+                </div> <!-- Results Div Row -->
               </div>
               </div>
         <!-- </div> -->
@@ -104,11 +113,7 @@
     <div class="row">
 
 
-<!-- Show Google Map ==================================== -->
-<div id="results"></div>
-<div class="map">map here</div>
- 
-<!-- End Google Map ==================================== -->
+
 
 
   <!-- Modal Structure -->
@@ -182,6 +187,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+  <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA"></script>
   <!-- JavaScript -->
   <script type="text/javascript" src="assets/javascript/oauth.js"></script>
   <script type="text/javascript" src="assets/javascript/sha1.js"></script>

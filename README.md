@@ -25,40 +25,45 @@ Removes indecision by choosing a restaurant for your next meal. Choose your para
 
 ##How we built it:
 
-Front end
+Materialize
 
-Opentable
+Yelp API
 
-Yelp
+Google Maps API
 
-Google Maps
+Opentable API (work in progress)
 
-Instagram (possibly)
-
-Postmates(possibly)
-
-
-##Challenges we ran into:
-
-
-##Accomplishments that we’re proud of:
-
-
-##What we learned:
-
-
-##What’s next for SnapSnax:
-
-
-##Built With:
+Postmates API(work in progress)
 
 JavaScript
 
-Ajax
+AJAX
 
-Bootstrap
+jQuery
 
-APIs (above)
+HTML5
+
+CSS3
+
+Firebase
+
+Google Fonts
+
+
+##Challenges we ran into:
+Navigating the Yelp API. Linking one AJAX response to another. Trying to work with unofficial documention from the Open Table API. Getting Materialize's parallax to work.
+
+
+##Accomplishments that we’re proud of:
+We came up with a good concept within our scope. We have a good handle on Materialize. Most of all, the site works!
+
+
+##What we learned:
+OAuth. How to read and implement API documentation. Materialize, and how it does not work with the most current jQuery. 
+
+
+##What’s next for SnapSnax:
+A rebanding! In our research, we found that there is actually a company called SnapSnax that create delicious banana chips in the Philippines. Integrate Open Table API and Postmates for reservation and delivery functionality.
 
 
 ##Try it out:

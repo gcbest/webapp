@@ -165,16 +165,18 @@ $("#FindRest").on("click", function() {
         var isOpen = 'Open Now';
         var imageURL = response.businesses[randomInt].image_url;
         var yelpURL = response.businesses[randomInt].mobile_url;
-
+        var latLng = {
+          lat: response.businesses[randomInt].location.coordinate.latitude,
+          lng: response.businesses[randomInt].location.coordinate.longitude,
+        }
         var companyInfo = $("<div>")
         companyInfo.append(name + '<br>');
         companyInfo.append(phone + '<br>');
         companyInfo.append(address + '<br>');
-        companyInfo.append(isOpen + '<br>');
         companyInfo.append('<img src="' + response.businesses[randomInt].image_url + '"">' + '<br>');
         companyInfo.append('<a href=' + yelpURL + '>' + yelpURL + '</a>' + '<br>');
         companyInfo.append('<iframe src=' + yelpURL + '>' + yelpURL + '</iframe>' + '<br>');
-        $("#results").html(companyInfo);
+        $("#results").append(companyInfo);
 
 
         // console.log($.ajax({'url': message.action,    
@@ -187,8 +189,10 @@ $("#FindRest").on("click", function() {
         console.log(response.businesses[randomInt]);
         console.log(address);
         console.log(price);
+        console.log(latLng);
+        initMap(latLng);
     }); //end done
-};
+});
 
 
 
@@ -256,14 +260,14 @@ $("#FindRest").on("click", function() {
   // console.log(googleUrl);
 // =========End Google Geocoder API ======
 
-$("#submit").on('click', function(){
+$("#FindRest").on('click', function(){
   //alert("It works");
   // var inputAddress = $(near).val().trim();
+  // $("#results").empty();
   var quoAdd = "\" "+ $("#userLocation").val().trim(); +"\""
   console.log(quoAdd);
-  var googleUrl = $("#maphere").append("<iframe src=\"//www.google.com/maps/embed/v1/place?q="+encodeURIComponent(quoAdd)+"&zoom=17&key=AIzaSyB4mN_A2vOANGFxYfVw99rUuOPftTeFUVM\"</iframe>")
-  console.log(inputAddress);
-  console.log(googleUrl);
+  var googleUrl = $("#map").append("https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&zoom=17&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA");
+
 /// REVIEW OBJ   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
 //         if (status == google.maps.GeocoderStatus.OK) { 
 //             console.log("Google OK");
@@ -272,9 +276,36 @@ $("#submit").on('click', function(){
 //             alert('Geocode was not successful for the following reason: ' + status);
 //         }
 // });
+
 });
 }); //end Doc ready
 
+var map;
+
+function initMap(place) {
+    // set initial position (RCB)
+    //var myLatlng = new google.maps.LatLng(40.7191114,-74.0328205);
+    var mapOptions = { // default map options
+        zoom: 16,
+        center: {lat: place.lat, lng: place.lng},
+    };
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var marker = new google.maps.Marker({
+      position: {lat: place.lat, lng: place.lng}
+      //map: map
+    });
+};
+
+// var infowindow = new google.maps.InfoWindow({
+//     content: '<p>Marker Location:' + marker.getPosition() + '</p>'
+//   });
+//   google.maps.event.addListener(marker, 'click', function() {
+//     infowindow.open(map, marker);
+//   });
+
+
+// initialization
+// google.maps.event.addDomListener(window, 'load', initMap);
   
 
 
