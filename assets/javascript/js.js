@@ -168,11 +168,25 @@ function initMap(place) {
         zoom: 16,
         center: {lat: place.lat, lng: place.lng},
     };
+    var contentString = '<div id="content">'+
+      '<div id="bodyContent">'+
+      '<p><b>Eat Here!</b></p>' +
+      '<p>Make a reservation on OpenTable, <a href="https://www.opentable.com">'+
+      'https://www.opentable.com</a> '+
+      '.</p>'+
+      '</div>'+
+      '</div>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var marker = new google.maps.Marker({
       position: {lat: place.lat, lng: place.lng},
       map:map,
       title: 'Eat here!'
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
     });
 };
 // ========= End Google Maps API ======
