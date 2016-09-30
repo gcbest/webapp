@@ -33,21 +33,8 @@
 
   // =========Start Yelp API=========
 
-
-
-
-// If they don't click anything it should search for everything
-// add the values to the options and selected attributes
-// add ids to the selects
-// do it without global variables
-
 var foodStr = "";
 var priceStr = "";
-
-// If food option is selected 
-//     add to a holding array
-//     if food option is deselected need to remove from the array
-//  join the food array with comma and space separating them
 
 $("#food").change(function() {
     var foodSelected = [];
@@ -58,24 +45,7 @@ $("#food").change(function() {
     });
 });
 
-  // If price 1-4 is selected
-  //   add to the price holding array
-  //   if price is deselected remove from the array
-  // join the price array with comma and space separating them
-$("#price").change(function() {
-    var priceSelected = [];
-    $("#price option:selected").each(function() {
-        priceSelected.push($(this).attr("value"));
-        priceStr = priceSelected.join(", ");
-        console.log(priceStr);
-    });
-});
-
-
-
-
 $("#FindRest").on("click", function() {
-    // var yelpTerms = $("#cuisine").val().trim();
     var auth = {
         consumerKey: 'A57Bv67Jx1i_WTKhVxaiTg',
         consumerSecret: 'z4fnfyiWxl25JrABzDChCd8NGGI',
@@ -143,8 +113,6 @@ $("#FindRest").on("click", function() {
 
         return number;
     }
-
-
     
     $.ajax({
         'url': message.action,
@@ -178,135 +146,35 @@ $("#FindRest").on("click", function() {
         companyInfo.append('<iframe src=' + yelpURL + '>' + yelpURL + '</iframe>' + '<br>');
         $("#results").append(companyInfo);
 
-
-        // console.log($.ajax({'url': message.action,    
-        //       'method': 'GET',
-        //       'data': parameterMap,
-        //       'cache': true,
-        //       'dataType': 'jsonp',
-        //       'jsonpCallback': 'cb',}));
-        // console.log(message);
-        console.log(response.businesses[randomInt]);
-        console.log(address);
-        console.log(price);
-        console.log(latLng);
         initMap(latLng);
     }); //end done
 });
-
-
 
 // =========End Yelp API=========
 
 // =========Start Google Maps API ======
 
-  // var geocoder;
-  // var map;
-  // var markers = new Array();
-  // var infos = new Array();
-
-  // function initialize() {
-  //   geocoder = new google.maps.Geocoder();
-  //   var latlng = new google.maps.LatLng(-34.397, 150.644);
-  //   var mapOptions = {
-  //     zoom: 8,
-  //     center: latlngmap
-  //     TypeId: google.maps.MapTypeId.ROADMAP
-  //   }
-  //   map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  // }
-
-  // function codeAddress() {
-  //   var address = document.getElementById('userLocation').value;
-  //   geocoder.geocode( { 'address': address}, function(results, status) {
-  //     if (status == 'OK') {
-  //       console.log(address);
-  //       // map.setCenter(results[0].geometry.location);
-  //       // use the marker to set 
-  //       // var marker = new google.maps.Marker({
-  //       //     map: map,
-  //       //     position: results[0].geometry.location
-  //       // });
-  //     } else {
-  //       alert('Geocode was not successful for the following reason: ' + status);
-  //     }
-  //   });
-  // }
-// ========= autolocate ======
-// var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  
-//   var options = {
-//     zoom: 15,
-//     center: coords,
-//     mapTypeControl: false,
-//     navigationControlOptions: {
-//       style: google.maps.NavigationControlStyle.SMALL
-//     },
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-//   };
-//   var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
-//   var marker = new google.maps.Marker({
-//       position: coords,
-//       map: map,
-//       title:"You are here!"
-//   });
-
-// =========End Google Maps API ======
-
-// =========Start Google Geocoder API ======
-  // var inputAddress = $("#userLocation").val().trim();
-  // var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+inputAddress+"&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA";
-  // console.log(inputAddress);
-  // console.log(googleUrl);
-// =========End Google Geocoder API ======
-
 $("#FindRest").on('click', function(){
-  //alert("It works");
-  // var inputAddress = $(near).val().trim();
-  // $("#results").empty();
   var quoAdd = "\" "+ $("#userLocation").val().trim(); +"\""
   console.log(quoAdd);
   var googleUrl = $("#map").append("https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&zoom=17&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA");
-
-/// REVIEW OBJ   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-//         if (status == google.maps.GeocoderStatus.OK) { 
-//             console.log("Google OK");
-//             };
-//         else {
-//             alert('Geocode was not successful for the following reason: ' + status);
-//         }
-// });
-
-});
-}); //end Doc ready
+  });
+}); //end doc ready
 
 var map;
 
 function initMap(place) {
-    // set initial position (RCB)
-    //var myLatlng = new google.maps.LatLng(40.7191114,-74.0328205);
-    var mapOptions = { // default map options
+    var mapOptions = { 
         zoom: 16,
         center: {lat: place.lat, lng: place.lng},
     };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var marker = new google.maps.Marker({
       position: {lat: place.lat, lng: place.lng}
-      //map: map
     });
 };
+// ========= End Google Maps API ======
 
-// var infowindow = new google.maps.InfoWindow({
-//     content: '<p>Marker Location:' + marker.getPosition() + '</p>'
-//   });
-//   google.maps.event.addListener(marker, 'click', function() {
-//     infowindow.open(map, marker);
-//   });
-
-
-// initialization
-// google.maps.event.addDomListener(window, 'load', initMap);
-  
 
 
 
