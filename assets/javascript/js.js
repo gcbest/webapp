@@ -170,7 +170,9 @@ function initMap(place) {
     };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var marker = new google.maps.Marker({
-      position: {lat: place.lat, lng: place.lng}
+      position: {lat: place.lat, lng: place.lng},
+      map:map,
+      title: 'Eat here!'
     });
 };
 // ========= End Google Maps API ======
