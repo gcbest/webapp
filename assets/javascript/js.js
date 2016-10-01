@@ -144,7 +144,7 @@ $("#FindRest").on("click", function() {
         companyInfo.append('<img src="' + response.businesses[randomInt].image_url + '" width=150px height=150px>' + '<br>');
         companyInfo.append('<a class="btn waves-effect waves-light red darken-3" href=' + yelpURL + '>' + 'Link to Yelp' + '</a>' + '<br>');
         
-        $("#results").append(companyInfo);
+        $("#results").html(companyInfo);
 
         initMap(latLng);
     }); //end done
