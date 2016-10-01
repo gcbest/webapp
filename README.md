@@ -1,6 +1,6 @@
 # SnapSnax
 ## Solving your food indecisions one meal at a time.
-
+(https://docs.google.com/presentation/d/1FRkKvBG4a8UQ3irGt6S5TVn5gboCeyahciwxcvaBsGk/pub?start=false&loop=false&delayms=3000 "Presentation Deck")
 
 ##Team:	
 **Allen Raymond**
