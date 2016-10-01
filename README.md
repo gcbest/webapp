@@ -68,6 +68,6 @@ A rebanding! In our research, we found that there is actually a company called S
 
 ##Try it out:
 
-[http://snapsnax.herokuapp.com](snapsnax.herokuapp.com)
+[https://snapsnax.herokuapp.com](snapsnax.herokuapp.com)
 
 https://github.com/SnapSnax/webapp
