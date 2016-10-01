@@ -64,7 +64,7 @@ $("#FindRest").on("click", function() {
     var rating_img_url_large = 'rating_img_url_large';
     var phone = 'phone';
     var yelpUrl = 'url';
-    var radius = 40000;
+    var radius = 3200;
     var price = priceStr; // This will come from the user input
     var open_now = true;
 
@@ -143,6 +143,7 @@ $("#FindRest").on("click", function() {
         companyInfo.append('<h6 style="color:black;">'+ address + '</h6><br>');
         companyInfo.append('<img src="' + response.businesses[randomInt].image_url + '" width=150px height=150px>' + '<br>');
         companyInfo.append('<a href=' + yelpURL + '>' + 'Link to Yelp' + '</a>' + '<br>');
+
         $("#results").append(companyInfo);
 
         initMap(latLng);
