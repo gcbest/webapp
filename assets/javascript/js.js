@@ -154,11 +154,11 @@ $("#FindRest").on("click", function() {
 
 // =========Start Google Maps API ======
 
-$("#FindRest").on('click', function(){
-  var quoAdd = "\" "+ $("#userLocation").val().trim(); +"\""
-  console.log(quoAdd);
-  var googleUrl = $("#map").append("https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&zoom=17&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA");
-  });
+// $("#FindRest").on('click', function(){
+//   var quoAdd = "\" "+ $("#userLocation").val().trim(); +"\""
+//   console.log(quoAdd);
+//   var googleUrl = $("#map").append("https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&zoom=17&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA");
+//   });
 }); //end doc ready
 
 var map;
