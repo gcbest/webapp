@@ -34,16 +34,19 @@
   // =========Start Yelp API=========
 
 var foodStr = "";
-var priceStr = "";
 
+/* Whenever a meal item is selected/unselected this fucntion will create an 
+   array containing all of the selected meals and then convert them into a string
+   to be passed into the Yelp API as a search parameter
+*/
 $("#food").change(function() {
     var foodSelected = [];
     $("#food option:selected").each(function() {
         foodSelected.push($(this).attr("value"));
         foodStr = foodSelected.join(", ");
-        console.log(foodStr);
     });
 });
+
 
 $("#FindRest").on("click", function() {
     var auth = {
@@ -58,50 +61,46 @@ $("#FindRest").on("click", function() {
 
     var terms = foodStr;
     var near = $("#userLocation").val().trim();
-    console.log(near);
-    var limit = 12;
-    var image_url = 'image_url';
-    var rating_img_url_large = 'rating_img_url_large';
-    var phone = 'phone';
-    var yelpUrl = 'url';
+    var limit = 20;
     var radius = 3200;
-    var price = priceStr; // This will come from the user input
-    var open_now = true;
+    var categories = "food";
 
-    var randomInt = Math.floor(Math.random() * 12); // This will be used to pick a restaurant result at random
+    // This will be used to pick a restaurant result at random from the array of results
+    var randomInt = Math.floor(Math.random() * 20); 
     var accessor = {
         consumerSecret: auth.consumerSecret,
         tokenSecret: auth.accessTokenSecret
     };
 
+    // An array of parameters that will be populated by variables and user inputs
     parameters = [];
-    parameters.push(['url', yelpUrl]);
     parameters.push(['term', terms]);
     parameters.push(['location', near]);
     parameters.push(['limit', limit]);
-    // parameters.push(['image_url', image_url]);
-    // parameters.push(['rating_img_url_large', rating_img_url_large]);
-    parameters.push(['open_now', true]);
-    parameters.push(['phone', phone]);
+    parameters.push(['categories', categories]);
     parameters.push(['radius', radius]);
-    parameters.push(['price', price]);
     parameters.push(['callback', 'cb']);
     parameters.push(['oauth_consumer_key', auth.consumerKey]);
     parameters.push(['oauth_consumer_secret', auth.consumerSecret]);
     parameters.push(['oauth_token', auth.accessToken]);
     parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
-    console.log(parameters);
+
+    // An object which contains the information we are going to be passing into the OAuth functions
     var message = {
         'action': 'http://api.yelp.com/v2/search',
         'method': 'GET',
         'parameters': parameters
     };
 
+    // Methods used to authenticate our calls to the Yelp API
     OAuth.setTimestampAndNonce(message);
     OAuth.SignatureMethod.sign(message, accessor);
     var parameterMap = OAuth.getParameterMap(message.parameters);
     parameterMap.oauth_signature = OAuth.percentEncode(parameterMap.oauth_signature);
 
+    /* Function used to format the phone number received from the
+       Yelp API into an easily readable format 
+    */
 
     function formatPhoneNumber(number) {
         var phoneArray = number.split("");
@@ -114,6 +113,7 @@ $("#FindRest").on("click", function() {
         return number;
     }
     
+    // AJAX call to the Yelp API 
     $.ajax({
         'url': message.action,
         'method': 'GET',
@@ -136,7 +136,9 @@ $("#FindRest").on("click", function() {
         var latLng = {
           lat: response.businesses[randomInt].location.coordinate.latitude,
           lng: response.businesses[randomInt].location.coordinate.longitude,
-        }
+        };
+
+        // Format the response information and store them all inside one div
         var companyInfo = $("<div>")
         companyInfo.append('<h6 class="red-text darken-3">'+ name + '</h6><br>');
         companyInfo.append('<h7 class="red-text darken-3">'+ phone + '</h7><br>');
@@ -144,6 +146,7 @@ $("#FindRest").on("click", function() {
         companyInfo.append('<img src="' + response.businesses[randomInt].image_url + '" width=150px height=150px>' + '<br>');
         companyInfo.append('<a class="btn waves-effect waves-light red darken-3" href=' + yelpURL + '>' + 'Link to Yelp' + '</a>' + '<br>');
         
+        // Add that storage div on the page and overwrite what was previously in the results div
         $("#results").html(companyInfo);
 
         initMap(latLng);
@@ -154,11 +157,6 @@ $("#FindRest").on("click", function() {
 
 // =========Start Google Maps API ======
 
-// $("#FindRest").on('click', function(){
-//   var quoAdd = "\" "+ $("#userLocation").val().trim(); +"\""
-//   console.log(quoAdd);
-//   var googleUrl = $("#map").append("https://maps.googleapis.com/maps/api/geocode/json?address="+encodeURIComponent(quoAdd)+"&zoom=17&key=AIzaSyCNEH9ddgTnDDO-HPKQtW1INRnXiYkp5aA");
-//   });
 }); //end doc ready
 
 var map;
