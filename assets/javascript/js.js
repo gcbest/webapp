@@ -138,10 +138,10 @@ $("#FindRest").on("click", function() {
           lng: response.businesses[randomInt].location.coordinate.longitude,
         }
         var companyInfo = $("<div>")
-        companyInfo.append('<h4 style="color:black;">'+ name + '</h4><br>');
-        companyInfo.append('<h4 style="color:black;">'+ phone + '</h4><br>');
-        companyInfo.append('<h4 style="color:black;">'+ address + '</h4><br>');
-        companyInfo.append('<img src="' + response.businesses[randomInt].image_url + '" style="width:300px;height:300px;>' + '<br>');
+        companyInfo.append('<h6 style="color:black;">'+ name + '</h6><br>');
+        companyInfo.append('<h6 style="color:black;">'+ phone + '</h6>');
+        companyInfo.append('<h6 style="color:black;">'+ address + '</h6><br>');
+        companyInfo.append('<img src="' + response.businesses[randomInt].image_url + '" width=150px height=150px>' + '<br>');
         companyInfo.append('<a href=' + yelpURL + '>' + 'Link to Yelp' + '</a>' + '<br>');
         $("#results").append(companyInfo);
 
