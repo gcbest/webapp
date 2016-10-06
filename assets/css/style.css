@@ -28,12 +28,13 @@ main {
 
 
 /*INPUT FIELD CSS ==================================================================*/
+    /*Input sizing*/
     #locationInput {
       clear: both;
       width: 50%;
       margin-left: 23%;
     }
-
+    /*Editing Results Output*/
     .shopName {
       font-size: 16px;
     }
